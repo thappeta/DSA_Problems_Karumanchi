@@ -7,7 +7,7 @@ import java.util.Objects;
 
 /*
  Problem Statement:-Nth node from end of linked list
- Approches:-Using Lenght
+ Approches:-Using Length
             Using HashMap Extra space
             Using Slow and Fast pointer
 
