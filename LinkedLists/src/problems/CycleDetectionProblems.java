@@ -84,7 +84,6 @@ public class CycleDetectionProblems {
                 break;
             }
         }
-        Node loopNode = fast;
         if (isLoopExists) {
             do {
                 fast = fast.next;
@@ -160,5 +159,7 @@ public class CycleDetectionProblems {
         }
         fast.next=null;
     }
+
+
 }
 
