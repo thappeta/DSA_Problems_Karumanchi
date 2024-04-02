@@ -117,5 +117,39 @@ public class YIntersectionPoint {
         }
         return -1;
     }
+    /*
+      Time Complexity: O(N+M) - due to the two passes through the linkedlists.
+      Space Complexity: O(1) - constant space usage.
+    */
+    int intersectPointPoint(Node head1, Node head2)
+    {
+        Node currentHead1=head1;
+        while (currentHead1.next!=null){
+            currentHead1=currentHead1.next;
+        }
+        currentHead1.next=head2;
+        boolean isloopExists=false;
+        Node fastNode=head1;
+        Node slowNode=head1;
+        Node newSlowNode=head1;
+        while (fastNode!=null){
+            fastNode=fastNode.next;
+            if(fastNode!=null){
+                fastNode=fastNode.next;
+                slowNode=slowNode.next;
+            }
+            if(fastNode==slowNode){
+                isloopExists=true;
+                break;
+            }
+        }
+        if(isloopExists){
+           while (fastNode!=newSlowNode){
+               fastNode=fastNode.next;
+               newSlowNode=newSlowNode.next;
+           }
+        }
+        return newSlowNode.data;
+    }
 
 }

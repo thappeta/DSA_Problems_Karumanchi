@@ -1,23 +1,27 @@
+
+import interviewbit.ListNode;
+import interviewbit.ReverseLinkedList;
+import interviewbit.reversetricks.ReverseLinkedLists;
 import utils.LinkedList;
-import utils.Node;
 
-import java.util.regex.Pattern;
-
-import static problems.ReverseLinkedList.reverseFirstKGrpNodes;
 
 public class Main {
     public static void main(String[] args) {
-        boolean validFileName = isValidFileName("test.txt");
-        System.out.printf("validFileName --> "+validFileName);
+        System.out.println(15%7);
+
+        for (int i = 1; i <=10; i++) {
+            LinkedList.insertAtEnd(i);
+        }
+        LinkedList.printData(LinkedList.head);
+        System.out.println();
+        ListNode reverseList = ReverseLinkedLists.reverseKGroupNodes(LinkedList.head,7);
+        LinkedList.printData(reverseList);
+
+
+
 
     }
-    public static boolean isValidFileName(String fileName) {
-        String regex = "[\\\\/:*?\"<>|]";
-        String reserveNames = "^(con|prn|aux|nul|com[1-9]|lpt[1-9])$";
 
-        return !(fileName == null || fileName.trim().isEmpty()) && !Pattern.compile(regex).matcher(fileName).find()
-                && !fileName.matches(reserveNames) && fileName.chars().filter(ch -> ch == 46).count() <= 1L;
-    }
 
 }
 
